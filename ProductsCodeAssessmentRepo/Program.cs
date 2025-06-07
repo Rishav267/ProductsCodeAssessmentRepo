@@ -1,4 +1,4 @@
-using AutoMapper;
+using Microsoft.EntityFrameworkCore;
 using ProductsCodeAssessmentRepo.Contract;
 using ProductsCodeAssessmentRepo.Domain;
 using ProductsCodeAssessmentRepo.Repository;
@@ -12,11 +12,9 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
-builder.Services.AddScoped<ProductDbContext>();
-builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+builder.Services.AddDbContext<ProductDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))); builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
-// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
-//builder.Services.AddOpenApi();
 
 var app = builder.Build();
 
