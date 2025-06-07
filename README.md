@@ -51,17 +51,29 @@ Technologies
    •	Swagger UI: https://localhost:7265/swagger
 
    Project Structure
+   
      ProductsCodeAssessmentRepo/
+   
           Controllers/
+   
           Domain/
+   
           Models/
+   
           Repository/
+   
           Contract/
+   
           Program.cs
+   
           appsettings.json
+   
       ProductsCodeAssessmentRepo.UnitTests/
+   
           UnitTests/
+   
             ProductRepositoryTests/
+   
               ProductRepositoryTests.cs
 
 
