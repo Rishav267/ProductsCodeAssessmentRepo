@@ -98,10 +98,10 @@ namespace ProductsCodeAssessmentRepo.Controllers
         /// <returns></returns>
         // PUT /api/products/add-to-stock/{id}/{quantity}
         [HttpPut("add-to-stock/{id}/{quantity}")]
-        public async Task<ActionResult<int>> AddToStock(int id, int quantity)
+        public async Task<IActionResult> AddToStock(int id, int quantity)
         {
-            await _productService.IncrementStock(id, quantity);
-            return Ok();
+            var result = await _productService.IncrementStock(id, quantity);
+            return Ok(result);
         }
     }
 }
