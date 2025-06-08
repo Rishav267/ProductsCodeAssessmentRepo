@@ -36,8 +36,8 @@ namespace ProductsCodeAssessmentRepo.Repository
 
                 var product = _mapper.Map<Product>(productdto);
                 _context.Products.Add(product);
-                var result = await _context.SaveChangesAsync();
-                return result;
+                await _context.SaveChangesAsync();
+                return product.Id;
             }
             catch (DbUpdateException ex)
             {

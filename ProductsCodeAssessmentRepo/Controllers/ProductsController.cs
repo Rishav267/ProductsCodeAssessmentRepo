@@ -19,7 +19,7 @@ namespace ProductsCodeAssessmentRepo.Controllers
         /// </summary>
         /// <param name="product"></param>
         [HttpPost]
-        public async Task<ActionResult<Product>> CreateProduct(ProductDTO product)
+        public async Task<IActionResult> CreateProduct(ProductDTO product)
         {
             if (product == null)
             {
@@ -53,7 +53,7 @@ namespace ProductsCodeAssessmentRepo.Controllers
         }
 
         /// <summary>
-        /// 
+        /// Delete the product by id from the database.
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
